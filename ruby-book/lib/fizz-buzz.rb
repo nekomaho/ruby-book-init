@@ -1,8 +1,11 @@
-def fizz_buzz(num)
-  return 'Fizz Buzz' if num % 15 == 0
-  return 'Buzz' if num % 5 == 0
-  return 'Fizz' if num % 3 == 0
-  num.to_s
+def fizz_buzz(n)
+  if n % 15 == 0
+    'Fizz Buzz'
+  elsif n % 3 == 0
+    'Fizz'
+  else
+    n.to_s
+  end
 end
 
 puts fizz_buzz(1)
