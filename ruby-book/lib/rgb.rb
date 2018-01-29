@@ -1,7 +1,9 @@
 def to_hex(r,g,b)
-  sprintf("#%02x%02x%02x",r,g,b)
+  [r, g, b].inject('#') do |hex, n|
+    hex + n.to_s(16).rjust(2, '0')
+  end
 end
 
-def to_ints(str)
-  [ str[1..2].to_i(16), str[3..4].to_i(16), str[5..6].to_i(16) ]
+def to_ints(hex)
+  hex.scan(/\w\w/).map(&:hex)
 end
